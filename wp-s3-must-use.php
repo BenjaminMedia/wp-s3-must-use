@@ -13,7 +13,7 @@ use Amazon_S3_And_CloudFront;
 
 add_filter('pre_site_option_' . Amazon_S3_And_CloudFront::SETTINGS_KEY, function ($option) {
 
-    if (getenv('AWS_S3_BUCKET') && getenv('AWS_S3_UPLOADS_PATH') && getenv('AWS_S3_ClOUDFRONT')) {
+    if (getenv('AWS_S3_BUCKET')) {
 
         $overideOptions = [
             'bucket' => getenv('AWS_S3_BUCKET'),

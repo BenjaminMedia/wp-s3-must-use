@@ -1,6 +1,6 @@
 {
   "name": "benjaminmedia/wp-s3-must-use",
-  "type": "wordpress-mu-plugin",
+  "type": "wordpress-muplugin",
   "homepage": "https://github.com/BenjaminMedia/wp-s3-must-use",
   "license": "GPLv3",
   "description": "Automatically Enables and configures the WP Offload S3 module.",

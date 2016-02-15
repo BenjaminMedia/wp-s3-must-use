@@ -20,6 +20,9 @@ add_filter('pre_site_option_' . Amazon_S3_And_CloudFront::SETTINGS_KEY, function
             'cloudfront' => getenv('AWS_S3_ClOUDFRONT') ? getenv('AWS_S3_ClOUDFRONT') : '',
             'object-prefix' => getenv('AWS_S3_UPLOADS_PATH') ? getenv('AWS_S3_UPLOADS_PATH') : 'content/uploads/',
             'remove-local-file' => 1,
+            'copy-to-s3' => 1,
+            'serve-from-s3' => 1,
+            'object-versioning' => 1
         ];
 
         return $overideOptions;
@@ -35,5 +38,4 @@ add_filter('option_active_plugins', function ($plugins) {
     ];
 
     return array_merge($plugins, $mustUsePlugins);
-
 });

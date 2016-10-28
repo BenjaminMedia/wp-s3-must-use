@@ -38,11 +38,5 @@ add_filter('option_active_plugins', function ($activePlugins) {
     ];
 
     // Make sure the $activePlugins only contains the must use plugin once
-    foreach ($mustUsePlugins as $mustUsePlugin) {
-        if(!in_array($mustUsePlugin, $activePlugins)) {
-            $activePlugins[] = $mustUsePlugin;
-        }
-    }
-
-    return $activePlugins;
+    return array_unique(array_merge($activePlugins, $mustUsePlugins));
 });

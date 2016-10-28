@@ -30,12 +30,13 @@ add_filter('pre_site_option_' . Amazon_S3_And_CloudFront::SETTINGS_KEY, function
     return $option;
 });
 
-add_filter('option_active_plugins', function ($plugins) {
+add_filter('option_active_plugins', function ($activePlugins) {
 
     $mustUsePlugins = [
         'amazon-s3-and-cloudfront/wordpress-s3.php',
         'amazon-web-services/amazon-web-services.php'
     ];
 
-    return array_merge($plugins, $mustUsePlugins);
+    // Make sure the $activePlugins only contains the must use plugin once
+    return array_unique(array_merge($activePlugins, $mustUsePlugins));
 });
